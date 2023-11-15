@@ -24,7 +24,7 @@ describe("Get notes with user", () => {
   it("GET notes", async () => {
     console.log(authToken);
     await spec()
-      .get(baseUrl + "notes/")
+      .get(baseUrl + "notes")
       .withHeaders("X-Auth-Token", authToken)
       .expectStatus(200)
       .expectJsonSchema(getAllNotesSchema);

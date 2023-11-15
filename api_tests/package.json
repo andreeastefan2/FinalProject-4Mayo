@@ -5,7 +5,7 @@
   "main": "Register-User.js",
   "scripts": {
     "test": "npx mocha tests --timeout=10000",
-    "newtest": "npx mocha tests/POST-notes.js --timeout=10000"
+    "newtest": "npx mocha tests/GET-notes.js --timeout=10000"
   },
   "author": "",
   "license": "ISC",
@@ -15,3 +15,4 @@
     "pactum": "^3.5.1"
   }
 }
+

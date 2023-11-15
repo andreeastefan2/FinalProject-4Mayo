@@ -8,7 +8,6 @@ const requestBody = {
 
 describe("Delete notes", () => {
   let authToken = "";
-  let noteId = "";
   before(async () => {
     request.setDefaultTimeout(10000);
 
@@ -18,19 +17,11 @@ describe("Delete notes", () => {
       .withHeaders("Content-Type", "application/json")
       .expectStatus(200);
     authToken = response.body.data.token;
-
-    const responseNote = await spec()
-      .get(baseUrl + "notes/")
-      .withHeaders("X-Auth-Token", authToken)
-      .expectStatus(200);
-    noteId = responseNote.body.data.id;
   });
 
   it("Delete note by Id", async () => {
-    console.log(authToken);
-    console.log(noteId);
     await spec()
-      .delete(baseUrl + "notes/" + noteId)
+      .delete(baseUrl + "notes/" + "65554c1e54df310141aea5ea")
       .withHeaders("X-Auth-Token", authToken)
       .expectStatus(200);
   });

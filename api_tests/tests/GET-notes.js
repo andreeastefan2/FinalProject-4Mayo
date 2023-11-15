@@ -22,7 +22,6 @@ describe("Get notes with user", () => {
   });
 
   it("GET notes", async () => {
-    console.log(authToken);
     await spec()
       .get(baseUrl + "notes")
       .withHeaders("X-Auth-Token", authToken)
